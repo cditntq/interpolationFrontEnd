@@ -1,0 +1,2 @@
+/*! ntq QL 2017-05-05 23:05:28 */
+"use strict";PageInfo.register({type:"config",info:function(){var a=location.origin+"/"+location.pathname.split("/")[1];return{paths:{jquery:a+"/assets/js/plug/jquery-3.2.0.js",layui:a+"/assets/js/plug/layui/lay/dest/layui.all.js"}}}});

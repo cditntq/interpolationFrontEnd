@@ -153,13 +153,84 @@ PageInfo.register({"type":"Obj","info":function(){
 		
 	};
 	
+	FunUtil.Global = {
+		"pageNo":1,
+		"pageSize":15
+	};
+	
+	FunUtil.common4search = function(data){
+		
+		var param = {};
+		var execuFun = {};
+		
+		execuFun.init = function(){
+			FunUtil.Global.pageNo = 1;
+			FunUtil.Global.pageSize = 15;
+		};
+		execuFun.next = function(){
+			FunUtil.Global.pageNo += 1;
+			FunUtil.Global.pageSize = 15;
+		};
+		
+		execuFun[data.type]();
+	};
 		
 		Page.show = function(){
 			 var request = this.api.rq();
 			 
 			 layui.use(['form', 'layedit', 'laydate','laypage', 'layer'], function(){ var form = layui.form() ,layer = layui.layer ,layedit = layui.layedit ,laydate = layui.laydate, laypage = layui.laypage ,layer = layui.layer;
 			 	form.render(''); 
-			 	laypage({ cont: 'ntq-employ-job-condition-pag', pages: 100, skip: true });
+			 	
+			 	form.on('submit(ntq-employ-job-btn)', function(data) {
+					var param = data.field;
+						param.isDiscussPersonally = ((data.field.isDiscussPersonally == "on") ? 1 :2);
+					
+					request.addCompanyPositionInfo(JSON.stringify(data.field),function(cdata){
+						
+					});
+					
+					
+					return false;
+				});
+				
+				
+				form.on('submit(ntq-employ-job-condition-sbtn)', function(data) {
+					FunUtil.common4search({"type":"init"});
+					var obj = data.field;	 
+					var param =  {
+							      "pageNo": FunUtil.Global.pageNo,
+							      "pageSize": FunUtil.Global.pageSize,
+							      "params": {
+							       		"positionName": obj.positionName,
+							       		"publishTime":obj.publishTime,
+							       		"postionStatus":obj.postionStatus
+							      	}
+							 	};
+					
+					var Fun4Help =function(type){
+						request.queryCompanyPositionInfoListByCondition(JSON.stringify(param),function(cdata){
+						 	cdata.totalPage = 20;
+							var pages = cdata.totalPage;
+								pages = parseInt(pages/15) + (pages%15 > 0 ? 1:0);
+							
+							if(type == "init") {
+								laypage({ cont: 'ntq-employ-job-condition-pag' ,pages: pages  ,jump: 
+									function(obj, first){
+										FunUtil.Global.pageNo = obj.curr;
+										param.pageNo = obj.curr;;
+										Fun4Help("next");
+									}
+								});
+							}
+						});
+					};
+					
+					Fun4Help("init");
+					
+					return false;
+				});
+			 	
+			 	
 			 });
 					
 					

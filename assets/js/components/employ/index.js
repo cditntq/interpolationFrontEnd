@@ -74,11 +74,6 @@ PageInfo.register({
 												area: ['420px', '240px'], //宽高
 												content: HtmUtil.common4input(),
 												success: function() {
-													/*$("#ntq-employ-index-form-btn").unbind("click").bind("click",function(){
-														layer.closeAll()
-														PageInfo.FunUtil.common4openUrl({"url":'employ/job'});
-													});*/
-													
 													var $phone = $("#ntq-employ-index-form-phone");
 													
 
@@ -88,7 +83,7 @@ PageInfo.register({
 															if(!String.HasText(phoneNumber)) return;
 															
 															request.getMessageCode({"phoneNumber":phoneNumber},function(data){
-																console.log(data);
+																if(!data.success) layer.msg(data.message);
 															});
 													});
 

@@ -1,38 +1,47 @@
 "use strict";
 
-PageInfo.register({
-		"type": "Obj",
-		"info": function info() {
+PageInfo.register({ "type": "Obj", "info": function info() {
 
-				var PageObj = {};
+		var PageObj = {};
 
-				PageObj.require = {
-						"$": "jquery",
-						"layui": "layui"
-				};
+		PageObj.require = {
+			"$": "jquery",
+			"layui": "layui"
+		};
 
-				PageObj.page = function () {
+		PageObj.page = function () {
 
-						var FunUtil = {};
-						var HtmUtil = {};
-						var Page = {};
+			var FunUtil = {};
+			var HtmUtil = {};
+			var Page = {};
 
-						HtmUtil.layout = function () {
-								var result = '<div id="doc-index" class="common-box"><p class="layui-elem-quote">结构目录</p><img src="../assets/img/icon-start.png"><fieldset class="layui-elem-field"><legend>示例：</legend><div class="layui-field-box"><img src="../assets/img/icon-demo.png"></div></fieldset></div>';return result;
-						};
+			HtmUtil.layout = function () {
+				var result = '<div id="ntq-index"><div class="ntq-index-apply"><div class="ntq-index-apply-btn">我要求职</div></div><div class="ntq-index-employ"><div class="ntq-index-employ-btn">我要招聘</div></div></div>';return result;
+			};
 
-						Page.data = function () {
-								var param = {};param.HtmUtil = HtmUtil;return param;
-						};
+			Page.data = function () {
+				var param = {};param.HtmUtil = HtmUtil;return param;
+			};
 
-						Page.show = function () {
-								console.log(1213);
-						};
+			Page.show = function () {
 
-						return Page;
-				};
+				console.log(123123);
 
-				return PageObj;
-		}
-});
+				var $btn4apply = $("div.ntq-index-apply-btn");
+				var $btn4employ = $("div.ntq-index-employ-btn");
+
+				$btn4apply.unbind("click").bind("click", function () {
+					PageInfo.FunUtil.common4openUrl({ "url": 'apply/index?uuid=123' });
+				});
+
+				$btn4employ.unbind("click").bind("click", function () {
+					PageInfo.FunUtil.common4openUrl({ "url": 'employ/index' });
+				});
+			};
+
+			return Page;
+		};
+
+		return PageObj;
+	} });
 //# sourceMappingURL=index.js.map

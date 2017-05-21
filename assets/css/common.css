@@ -6,7 +6,7 @@ body{background-color:#f3f3f3}
 /*===招聘===*/
 #ntq-employ-index{display:table;margin:50px auto}
 #ntq-employ-index-form{overflow:hidden;margin-top:20px}
-#ntq-employ-index-form-code{font-size:12px;color:#1E9FFF;padding:0;line-height:38px;text-align:left}
+#ntq-employ-index-form-code{font-size:12px;color:white;padding:0 8px;line-height:38px;text-align:center;width: 99px;}
 #ntq-employ-job-condition{padding:25px}
 #ntq-employ-job-search{margin:20px auto;padding-top:21px}
 #ntq-employ-job-num{margin-top:-11px}
@@ -14,6 +14,7 @@ body{background-color:#f3f3f3}
 .ntq-employ-job-condition-num{color:#1E9FFF;text-decoration:underline;cursor:pointer}
 
 .ntq-employ-job-condition-po{color:#1E9FFF;text-decoration:underline;cursor:pointer}
+
 .ntq-employ-add{display:table;margin:40px auto 0}
 
 /*===招聘===*/
@@ -26,6 +27,10 @@ body{background-color:#f3f3f3}
 #ntq-apply-job-update{padding-top:15px}
 .ntq-apply-job-condition-num{color:#1E9FFF;text-decoration:underline;cursor:pointer}
 .ntq-apply-add{display:table;margin:40px auto 0}
+
+.ntq-apply-job-condition-num{color:#1E9FFF;text-decoration:underline;cursor:pointer}
+.ntq-apply-job-condition-compy{color:#1E9FFF;text-decoration:underline;cursor:pointer}
+.ntq-apply-job-condition-po{color:#1E9FFF;text-decoration:underline;cursor:pointer}
 
 
 /*===主页=== */
@@ -53,10 +58,10 @@ width: 190px;
 #ntq-apply-job-condition{
 	padding-top: 0;
 }
-#ntq-admin-index{
+#ntq-admin-add{
 	padding: 25px;
 }
-#ntq-admin-index-search .layui-form-mid {
+#ntq-admin-add-search .layui-form-mid {
     float: left;
     display: block;
     padding: 9px 0;
@@ -69,3 +74,7 @@ width: 190px;
 #ntq-employ-add{
 	padding: 25px;margin-bottom: 100px;
 }
+
+.ntq-admin-job-condition-num{color:#1E9FFF;text-decoration:underline;cursor:pointer}
+
+.ntq-admin-job-condition-po{color:#1E9FFF;text-decoration:underline;cursor:pointer}

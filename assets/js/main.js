@@ -1,2 +1,2 @@
-/*! xdnphb-html-rong QL 2017-05-21 16:05:00 */
+/*! ntq by QL QL 2017-05-21 17:05:48 */
 "use strict";PageInfo.register({type:"Start",info:function(){var a={};return a.require={$:"jquery"},a.Router={flag:"hash",list:{index:"/assets/js/components/index","admin/handle":"/assets/js/components/admin/handle","admin/add":"/assets/js/components/admin/add","apply/job":"/assets/js/components/apply/job","apply/add":"/assets/js/components/apply/add","apply/index":"/assets/js/components/apply/index","employ/job":"/assets/js/components/employ/job","employ/add":"/assets/js/components/employ/add","employ/index":"/assets/js/components/employ/index"}},a.Global={id:"qlive-body",name:"ntq",debug:!0},a.Pub=function(){},a}});

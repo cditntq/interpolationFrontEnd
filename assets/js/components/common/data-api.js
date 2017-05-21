@@ -1,2 +1,169 @@
-/*! xdnphb-html-rong QL 2017-05-21 16:05:01 */
-PageInfo.register({type:"plug",info:function(a){var b=a("/assets/js/components/common/request"),c={};return c.rq=function(){var a="http://119.23.69.169:8080/ntq/";return{getMessageCode:function(c,d){b.common4get({url:a+"companyInfo/getMessageCode.action",param:c},d)},verifyMessageCode:function(c,d){b.common4get({url:a+"companyInfo/verifyMessageCode.action",param:c},d)},getMessageAfterValidatePhoneNumber:function(c,d){b.common4post({url:a+"companyInfo/getMessageAfterValidatePhoneNumber.action",param:c},d)},verifyHrPhoneNumber:function(c,d){b.common4post({url:a+"companyInfo/verifyHrPhoneNumber.action",param:c},d)},addCompanyInfoWithPositionInfoList:function(c,d){b.common4post({url:a+"companyInfo/addCompanyInfoWithPositionInfoList.action",param:c},d)},addCompanyPositionInfo:function(c,d){b.common4post({url:a+"companyInfo/addCompanyPositionInfo.action",param:c},d)},queryCompanyPositionInfoListByCondition:function(c,d){b.common4post({url:a+"companyInfo/queryCompanyPositionInfoListByCondition.action",param:c},d)},getCompanyPositionInfoById:function(c,d){b.common4get({url:a+"companyInfo/getCompanyPositionInfoById.action",param:c},d)},queryJobSeekerInfoVoList:function(c,d){b.common4post({url:a+"companyInfo/queryJobSeekerInfoVoList.action",param:c},d)},updateOrInsertCompanyPositionInfo:function(c,d){b.common4post({url:a+"companyInfo/updateOrInsertCompanyPositionInfo.action",param:c},d)},withDrawCompanyPositionInfo:function(c,d){b.common4get({url:a+"companyInfo/withDrawCompanyPositionInfo.action",param:c},d)},getInfos:function(c,d){b.common4post({url:a+"get/position/getinfos.action",param:c},d)},addJobSeekerInfoAndResume:function(c,d){b.common4post({url:a+"jobSeekerInfo/addJobSeekerInfoAndResume.action",param:c},d)},queryJobSeekerPositionVoList:function(c,d){b.common4post({url:a+"jobSeekerInfo/queryJobSeekerPositionVoList.action",param:c},d)},getCompanyPositionInfoById:function(c,d){b.common4get({url:a+"jobSeekerInfo/getCompanyPositionInfoById.action",param:c},d)},getCompanyInfoById:function(c,d){b.common4get({url:a+"jobSeekerInfo/getCompanyInfoById.action",param:c},d)},addJobSeekerResume:function(){return a+"jobSeekerInfo/addJobSeekerResume.action"},ntq4getCompanyInfoById:function(c,d){b.common4get({url:a+"ntqCompanyPositionDealController/getCompanyInfoById.action",param:c},d)},positionRelease:function(c,d){b.common4get({url:a+"ntqCompanyPositionDealController/positionRelease.action",param:c},d)},queryCompanyPositionInfoVoListByCondition:function(c,d){b.common4post({url:a+"ntqCompanyPositionDealController/queryCompanyPositionInfoVoListByCondition.action",param:c},d)},rejectPositionRelease:function(c,d){b.common4get({url:a+"ntqCompanyPositionDealController/rejectPositionRelease.action",param:c},d)}}},c}});
+PageInfo.register({"type": "plug","info": function(require) {
+		
+	var request = require( "/assets/js/components/common/request");
+	var FunUtil = {};
+	
+	FunUtil.rq = function() {
+
+		var burl = "http://119.23.69.169:8080/ntq/";
+
+		return {
+
+			/*=======招聘模块============ */
+			'getMessageCode': function(data, success) {
+				request.common4get({
+					url: (burl + "companyInfo/getMessageCode.action"),
+					"param": data
+				}, success);
+			},
+			'verifyMessageCode': function(data, success) {
+				request.common4get({
+					url: (burl + "companyInfo/verifyMessageCode.action"),
+					"param": data
+				}, success);
+			},
+			'getMessageAfterValidatePhoneNumber': function(data, success) {
+				request.common4post({
+					url: (burl + "companyInfo/getMessageAfterValidatePhoneNumber.action"),
+					"param": data
+				}, success);
+			},
+
+			'verifyHrPhoneNumber': function(data, success) {
+				request.common4post({
+					url: (burl + "companyInfo/verifyHrPhoneNumber.action"),
+					"param": data
+				}, success);
+			},
+
+			'addCompanyInfoWithPositionInfoList': function(data, success) {
+				request.common4post({
+					url: (burl + "companyInfo/addCompanyInfoWithPositionInfoList.action"),
+					"param": data
+				}, success);
+			},
+
+			'addCompanyPositionInfo': function(data, success) {
+				request.common4post({
+					url: (burl + "companyInfo/addCompanyPositionInfo.action"),
+					"param": data
+				}, success);
+			},
+
+			'queryCompanyPositionInfoListByCondition': function(data, success) {
+				request.common4post({
+					url: (burl + "companyInfo/queryCompanyPositionInfoListByCondition.action"),
+					"param": data
+				}, success);
+			},
+
+			'getCompanyPositionInfoById': function(data, success) {
+				request.common4get({
+					url: (burl + "companyInfo/getCompanyPositionInfoById.action"),
+					"param": data
+				}, success);
+			},
+
+			'queryJobSeekerInfoVoList': function(data, success) {
+				request.common4post({
+					url: (burl + "companyInfo/queryJobSeekerInfoVoList.action"),
+					"param": data
+				}, success);
+			},
+
+			'updateOrInsertCompanyPositionInfo': function(data, success) {
+				request.common4post({
+					url: (burl + "companyInfo/updateOrInsertCompanyPositionInfo.action"),
+					"param": data
+				}, success);
+			},
+
+			'withDrawCompanyPositionInfo': function(data, success) {
+				request.common4get({
+					url: (burl + "companyInfo/withDrawCompanyPositionInfo.action"),
+					"param": data
+				}, success);
+			},
+
+			/*=======求职者模块============== */
+
+			'getInfos': function(data, success) {
+				request.common4post({
+					url: (burl + "get/position/getinfos.action"),
+					"param": data
+				}, success);
+			},
+
+			'addJobSeekerInfoAndResume': function(data, success) {
+				request.common4post({
+					url: (burl + "jobSeekerInfo/addJobSeekerInfoAndResume.action"),
+					"param": data
+				}, success);
+			},
+			
+			'queryJobSeekerPositionVoList': function(data, success) {
+				request.common4post({
+					url: (burl + "jobSeekerInfo/queryJobSeekerPositionVoList.action"),
+					"param": data
+				}, success);
+			},
+			
+			'getCompanyPositionInfoById': function(data, success) {
+				request.common4get({
+					url: (burl + "jobSeekerInfo/getCompanyPositionInfoById.action"),
+					"param": data
+				}, success);
+			},
+			
+			'getCompanyInfoById': function(data, success) {
+				request.common4get({
+					url: (burl + "jobSeekerInfo/getCompanyInfoById.action"),
+					"param": data
+				}, success);
+			},
+			/*'addJobSeekerResume': function(data, success) {
+				request.common4get({
+					url: (burl + "jobSeekerInfo/addJobSeekerResume.action"),
+					"param": data
+				}, success);
+			},
+			*/
+			'addJobSeekerResume': function() {
+				 return (burl + "jobSeekerInfo/addJobSeekerResume.action");
+			},
+			
+			
+			/* ==admin==*/
+			
+			'ntq4getCompanyInfoById': function(data, success) {
+				request.common4get({
+					url: (burl + "ntqCompanyPositionDealController/getCompanyInfoById.action"),
+					"param": data
+				}, success);
+			},
+			'positionRelease': function(data, success) {
+				request.common4get({
+					url: (burl + "ntqCompanyPositionDealController/positionRelease.action"),
+					"param": data
+				}, success);
+			},
+			
+			'queryCompanyPositionInfoVoListByCondition': function(data, success) {
+				request.common4post({
+					url: (burl + "ntqCompanyPositionDealController/queryCompanyPositionInfoVoListByCondition.action"),
+					"param": data
+				}, success);
+			},
+			
+			'rejectPositionRelease': function(data, success) {
+				request.common4get({
+					url: (burl + "ntqCompanyPositionDealController/rejectPositionRelease.action"),
+					"param": data
+				}, success);
+			},
+		};
+	};
+	
+	return FunUtil;
+		
+}});

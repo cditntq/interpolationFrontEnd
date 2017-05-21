@@ -1,2 +1,2 @@
-/*! xdnphb-html-rong QL 2017-05-21 16:05:00 */
+/*! ntq by QL QL 2017-05-21 17:05:48 */
 "use strict";PageInfo.register({type:"config",info:function(){var a=location.origin+"/"+location.pathname.split("/")[1];return{paths:{jquery:a+"/assets/js/plug/jquery-3.2.0.js"},other:{layui:a+"/assets/js/plug/layui/layui.js"}}}});
